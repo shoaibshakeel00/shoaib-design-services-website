@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+    <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#0b1637"/><stop offset="1" stop-color="#3859a6"/></linearGradient></defs>
+    <rect width="1200" height="800" fill="url(#g)"/>
+    <circle cx="1080" cy="80" r="180" fill="#fff" opacity=".04"/>
+    
+        <rect x="155" y="70" width="890" height="660" rx="26" fill="#fff" opacity=".98"/>
+        <rect x="155" y="70" width="250" height="660" rx="26" fill="#3859a6"/>
+        <circle cx="280" cy="190" r="62" fill="#f4b83b" opacity=".9"/>
+        <rect x="225" y="285" width="110" height="12" rx="6" fill="#fff" opacity=".9"/>
+        <rect x="205" y="320" width="150" height="9" rx="4" fill="#fff" opacity=".55"/>
+        <rect x="205" y="350" width="125" height="9" rx="4" fill="#fff" opacity=".55"/>
+        <rect x="455" y="125" width="430" height="34" rx="8" fill="#3859a6"/>
+        <rect x="455" y="185" width="480" height="12" rx="6" fill="#dce4f3"/>
+        <rect x="455" y="215" width="380" height="12" rx="6" fill="#e9eef6"/>
+        <rect x="455" y="275" width="520" height="14" rx="7" fill="#b9c8e0"/>
+        <rect x="455" y="315" width="450" height="10" rx="5" fill="#dbe3ef"/>
+        <rect x="455" y="345" width="500" height="10" rx="5" fill="#dbe3ef"/>
+        <rect x="455" y="405" width="235" height="180" rx="12" fill="#f0f4fa"/>
+        <rect x="715" y="405" width="235" height="180" rx="12" fill="#f0f4fa"/>
+        <rect x="455" y="620" width="350" height="10" rx="5" fill="#dbe3ef"/>
+        
+    <text x="600" y="770" text-anchor="middle" fill="#fff" font-family="Arial" font-size="22" font-weight="700">S.S Professional Services • University Admission</text>
+    </svg>

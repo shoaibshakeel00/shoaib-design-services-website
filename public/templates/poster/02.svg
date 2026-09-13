@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+    <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f4f7fc"/><stop offset="1" stop-color="#1852dc"/></linearGradient></defs>
+    <rect width="1200" height="800" fill="url(#g)"/>
+    <circle cx="1080" cy="80" r="180" fill="#fff" opacity=".04"/>
+    
+        <rect x="210" y="55" width="780" height="690" rx="35" fill="#1852dc"/>
+        <circle cx="850" cy="175" r="135" fill="#0b1741" opacity=".92"/>
+        <circle cx="310" cy="640" r="100" fill="#0b1741" opacity=".18"/>
+        <rect x="275" y="125" width="180" height="38" rx="12" fill="#0b1741" opacity=".9"/>
+        <text x="275" y="290" fill="#fff" font-family="Arial" font-weight="800" font-size="58">Special Offer</text>
+        <text x="275" y="355" fill="#fff" font-family="Arial" font-weight="800" font-size="58"></text>
+        <rect x="275" y="410" width="430" height="15" rx="8" fill="#fff" opacity=".65"/>
+        <rect x="275" y="445" width="350" height="15" rx="8" fill="#fff" opacity=".45"/>
+        <rect x="275" y="520" width="190" height="55" rx="27" fill="#0b1741"/>
+        
+    <text x="600" y="770" text-anchor="middle" fill="#fff" font-family="Arial" font-size="22" font-weight="700">S.S Professional Services • Special Offer</text>
+    </svg>
