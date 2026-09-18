@@ -48,3 +48,4 @@ Open `http://localhost:3000`.
 
 ## Important
 Never commit a real Supabase secret key to GitHub. Put it in `.env.local` locally and in Vercel Environment Variables for deployment.
+"# shoaib-design-services-website" 
