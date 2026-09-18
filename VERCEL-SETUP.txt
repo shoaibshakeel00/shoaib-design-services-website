@@ -1,0 +1,82 @@
+Shoaib Digital Services — Vercel + Supabase Setup
+=================================================
+
+1) Supabase
+-----------
+Create/open your Supabase project, then open SQL Editor.
+Run the complete file:
+  supabase/schema.sql
+
+Create an admin user in Supabase Authentication > Users.
+Then run this SQL, replacing the email with the admin user's email:
+
+  update public.profiles
+  set role = 'admin'
+  where email = 'YOUR_ADMIN_EMAIL@example.com';
+
+2) Vercel Environment Variables
+-------------------------------
+Add these exact variable names in Vercel Project Settings > Environment Variables:
+
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY
+SUPABASE_SECRET_KEY=YOUR_SUPABASE_SECRET_KEY
+NEXT_PUBLIC_SITE_URL=https://YOUR-VERCEL-DOMAIN.vercel.app
+NEXT_PUBLIC_WHATSAPP_NUMBER=923153400086
+NEXT_PUBLIC_BUSINESS_EMAIL=shoaibportfolio1@gmail.com
+
+Important:
+- SUPABASE_SECRET_KEY is server-only. Never expose it in browser code.
+- Use the Supabase project's current publishable key for NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
+- If your project still uses the older service_role key, do not rename the app variable; put that server secret into SUPABASE_SECRET_KEY.
+
+3) Deploy
+---------
+Build command:
+  npm run build
+
+Start command (for non-Vercel hosting):
+  npm run start
+
+Vercel detects Next.js automatically.
+
+4) Connection check
+-------------------
+After deployment open:
+  https://YOUR-VERCEL-DOMAIN.vercel.app/api/health
+
+A healthy response contains:
+  "ok": true
+  "database": true
+  "storage": true
+
+If the response is 503, check the three Supabase variables first and confirm supabase/schema.sql was executed.
+
+5) Storage
+----------
+The schema creates these buckets:
+- documents (private)
+- ad-images (public)
+
+Customer documents are uploaded using short-lived signed upload URLs.
+Admin document viewing uses short-lived signed download URLs.
+
+6) Admin
+---------
+Open:
+  /auth/login
+
+Sign in with the Supabase Authentication user whose public.profiles.role is admin.
+The /admin area is protected by the server-side Supabase session and role check.
+
+7) Contact
+----------
+WhatsApp: 0315 3400086
+Email: shoaibportfolio1@gmail.com
+
+ORDER SUBMIT FIX (latest)
+- Order creation no longer depends on the optional next_order_code() RPC.
+- Server generates a unique SDS-YYYY-XXXXXXXX order code and retries if a duplicate occurs.
+- Server accepts SUPABASE_SECRET_KEY (preferred) and SUPABASE_SERVICE_ROLE_KEY (legacy).
+- Make sure NEXT_PUBLIC_SUPABASE_URL and one server-only key are set in Vercel.
+- Run supabase/schema.sql once in the Supabase SQL Editor so the orders and order_files tables exist.

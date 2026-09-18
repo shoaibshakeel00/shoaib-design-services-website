@@ -1,6 +1,1 @@
-{
-  "rewrites": [
-    {"source": "/api/(.*)", "destination": "/api/$1"},
-    {"source": "/((?!assets|templates|favicon.ico).*)", "destination": "/index.html"}
-  ]
-}
+{"framework":"nextjs","regions":["sin1"]}

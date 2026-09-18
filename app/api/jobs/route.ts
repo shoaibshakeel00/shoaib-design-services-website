@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';import {createAdminClient} from '@/lib/supabase/admin';export async function GET(){const {data,error}=await createAdminClient().from('jobs').select('*').eq('status','Active').gte('last_date',new Date().toISOString().slice(0,10)).order('last_date',{ascending:true});return NextResponse.json({jobs:error?[]:data||[]});}

@@ -1,41 +1,50 @@
-# S.S Professional Services — Advanced React + Vercel
+# Shoaib Digital Services — Neon Engineering Full-Stack Theme
 
-## Features
-- Separate pages for Home, About, Services, Templates, Pricing and Contact.
-- Individual service detail pages using React routing-style client navigation.
-- 10 template image assets per service.
-- Passport-size photo service.
-- Government job portal account service.
-- CV/Resume, posters, job forms, college forms, Windows and computer services.
-- Client can select a service + template and send an order request.
-- WhatsApp order links.
-- Backend API at `/api/order`.
-- Optional email notification through Resend.
-- Free Vercel deployment ready.
+A Next.js + Supabase service platform redesigned around the supplied black + neon-green engineering reference.
 
-## Backend / email connection
-The frontend POSTs orders to `/api/order`.
-For email notification, create these Vercel Environment Variables:
-- `RESEND_API_KEY`
-- `ADMIN_EMAIL=shoaibportfolio1@gmail.com`
-- `FROM_EMAIL` = a verified sender/domain in Resend, e.g. `S.S Professional Services <orders@yourdomain.com>`
+## Frontend
+- Black / deep-green engineering visual system
+- Animated grid, scan-line, glow and floating effects
+- Reference-inspired laptop + mobile hero showcase using the existing website template assets
+- Responsive navigation and layouts for desktop, tablet and mobile
+- Hover previews and animated service/template cards
+- Floating WhatsApp contact: **0315 3400086**
+- Email: **shoaibportfolio1@gmail.com**
 
-Without Resend variables, the API still validates and accepts the order and returns a request ID; it does not persist orders because Vercel serverless functions are stateless.
+## Service platform
+- Service catalog and professional templates
+- Service order flow
+- Document upload with per-file progress
+- Order tracking
+- Reviews with admin approval
+- Contact messages
+- Live jobs with official apply links
+- Admin advertisements
+- Server-side admin authentication/session + role check
+- Admin dashboard for orders, customers, documents, jobs, ads, reviews and messages
 
-## Deploy
-Upload to GitHub → Vercel → Import Project → Deploy.
-No database is required for the basic free deployment.
+## Supabase connection
+The app uses these exact environment variable names:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SECRET_KEY`
+- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`
+- `NEXT_PUBLIC_BUSINESS_EMAIL`
 
+Database/storage schema: `supabase/schema.sql`
+Deployment guide: `VERCEL-SETUP.txt`
 
-## Automatic job alerts
-The site now has a **Latest Government & Private Jobs** board.
-- `/api/jobs` returns configured jobs.
-- It includes official FPSC and National Jobs Portal entry points by default.
-- Add `JOB_FEED_URLS` in Vercel Environment Variables for RSS/JSON feeds you are authorized to aggregate.
-- The API caches responses for 15 minutes and deduplicates jobs.
-- Government listings should link back to the official advertisement/application source rather than pretending S.S is the employer.
+### Health check
+After configuration, open `/api/health`. It checks the server-side Supabase database and private document storage connection.
 
-### About "ads"
-There are two separate features:
-1. **Job alerts** — latest government/private vacancies shown on your website.
-2. **Paid ads** (Google/other advertisers) — ad slots can be added separately and are not the same thing as job alerts.
+## Run locally
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Important
+Never commit a real Supabase secret key to GitHub. Put it in `.env.local` locally and in Vercel Environment Variables for deployment.
